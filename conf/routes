@@ -1,0 +1,19 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+# Tips
+POST    /api/tips/create-tip        controllers.TipsController.createTip
+POST    /api/tips/fetch-tip         controllers.TipsController.fetchTip
+POST    /api/tips/update-tip        controllers.TipsController.updateTip
+POST    /api/tips/delete-tip        controllers.TipsController.deleteTip
+POST    /api/tips/add-comment       controllers.TipsController.addComment
+GET     /api/tips/fetch-all-tips    controllers.TipsController.fetchAllTips
+GET     /api/tips/delete-all-tips   controllers.TipsController.deleteAllTips
+
+# Base
+GET     /                           controllers.DefaultController.index
+GET     /$path<.*>                  controllers.DefaultController.catchAll(path)
