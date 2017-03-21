@@ -13,18 +13,25 @@ class IntegrationSpec extends Specification {
 
   "Application" should {
 
-    "work from within a browser" in new WithBrowser {
+    "respond to index requests from browser by confirming ready status" in new WithBrowser {
 
       browser.goTo("http://localhost:" + port)
 
-      browser.pageSource must contain("Application ready...")
+      browser.pageSource must be equalTo "Application ready..."
     }
 
-    "handle invalid route requests" in new WithBrowser {
+    "connect to database and clear existing data" in new WithBrowser {
 
-      browser.goTo("http://localhost:" + port + "/invalid")
+      browser.goTo("http://localhost:" + port + "/api/tips/delete-all-tips")
 
-      browser.pageSource must contain("The specified route is not defined:")
+      browser.pageSource must contain("Tips collection cleared.")
+    }
+
+    "fetch empty result set from database" in new WithBrowser {
+
+      browser.goTo("http://localhost:" + port + "/api/tips/fetch-all-tips")
+
+      browser.pageSource must be equalTo "[]"
     }
   }
 }
