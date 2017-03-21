@@ -16,4 +16,6 @@ GET     /api/tips/delete-all-tips   controllers.TipsController.deleteAllTips
 
 # Base
 GET     /                           controllers.DefaultController.index
+GET     /api                        controllers.DefaultController.index
+GET     /api/tips                   controllers.DefaultController.index
 GET     /$path<.*>                  controllers.DefaultController.catchAll(path)

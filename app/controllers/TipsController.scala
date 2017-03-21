@@ -138,7 +138,7 @@ class TipsController @Inject()(val reactiveMongoApi: ReactiveMongoApi) extends C
     * @return Simple JSON document confirming all tips have been deleted
     */
   def deleteAllTips(): Action[AnyContent] = Action.async { implicit request =>
-    tipsRepo.dropAll().map(result => Ok(Json.obj("result" -> "All tips deleted.")))
+    tipsRepo.dropAll().map(result => Ok(Json.obj("result" -> "Operation successful: Tips collection cleared.")))
   }
 
 }
