@@ -168,6 +168,20 @@ Response:
 	"result": "Operation successful: Tips collection cleared."
 }
 ```
+## Testing
+Basic integration tests ensure the application properly process requests from a browser, and can connect to and execute operations against the database:
+
+![Integration Tests](/static/images/integration_tests.png?raw=true)
+
+This does constitute proper load or performance testing, but [JMeter](https://jmeter.apache.org/) was used to ensure the application can handle a constant stream of incoming requests.
+
+Incoming _create-tip_ requests:
+
+![Database Writes](/static/images/database_reads.png?raw=true)
+
+Incoming _fetch-tip_ requests:
+
+![Database Reads](static/images/database_writes.png?raw=true)
 
 ## Out of Scope
 The topics described below were deemed out of scope for this particular project, but would likely be of concern in a real-world application of this service.
