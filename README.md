@@ -51,7 +51,7 @@ The following table details all operations supported by **tips-service**:
 | fetch-tip         |        POST       | { "id":"\<ID of tip to fetch\>" }                                                        | Fetch a previously created tip                 |
 | update-tip        |        POST       | { "id":"\<ID of tip to update\>", "message":"\<updated tip message body\>"}             | Update the message of a previously created tip |
 | delete-tip        |        POST       | { "id":"\<ID of tip to delete\>" }                                                       | Delete a previously created tip                |
-| add-comment        |        POST       | { "id":"\<ID of tip to which to add comment\\>", "comment":"\<comment message body\>" } | Add a comment to an existing tip               |
+| add-comment        |        POST       | { "id":"\<ID of tip to which to add comment\>", "comment":"\<comment message body\>" } | Add a comment to an existing tip               |
 | fetch-all-tips  |        GET        | _n/a_                                                                                     | Fetch all existing tips                        |
 | delete-all-tips |        GET        | _n/a_                                                                                     | Drop the entire collection of tips             |
 
@@ -169,11 +169,11 @@ Response:
 }
 ```
 ## Testing
-Basic integration tests ensure the application properly process requests from a browser, and can connect to and execute operations against the database:
+Basic integration tests ensure the application properly processes requests from a browser, and can connect to and execute operations against the database:
 
 ![Integration Tests](/static/images/integration_tests.png?raw=true)
 
-This does constitute proper load or performance testing, but [JMeter](https://jmeter.apache.org/) was used to ensure the application can handle a constant stream of incoming requests.
+This does not constitute proper load or performance testing, but [JMeter](https://jmeter.apache.org/) was used to ensure the application can handle a constant stream of incoming requests.
 
 Incoming _create-tip_ requests:
 
@@ -181,7 +181,7 @@ Incoming _create-tip_ requests:
 
 Incoming _fetch-tip_ requests:
 
-![Database Reads](/static/images/database_writes.png?raw=true)
+![Database Reads](/cd static/images/database_writes.png?raw=true)
 
 ## Out of Scope
 The topics described below were deemed out of scope for this particular project, but would likely be of concern in a real-world application of this service.
