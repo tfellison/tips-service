@@ -197,7 +197,7 @@ Incoming _create-tip_ requests:
 
 Incoming _fetch-tip_ requests:
 
-![Database Reads](/cd static/images/database_writes.png?raw=true)
+![Database Reads](/static/images/database_writes.png?raw=true)
 
 ## Scope
 The topics described below were deemed out of scope for this particular project, but would likely be of concern in a real-world application of this service.
