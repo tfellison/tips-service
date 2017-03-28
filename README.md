@@ -5,6 +5,22 @@ The service uses [Play Framework](https://www.playframework.com/), an event-driv
 
 In versions 3.0 and newer, MongoDB scales vertically reasonably well (primarily due to [major locking improvements](https://docs.mongodb.com/manual/faq/concurrency/) in v3.0) and [sharding](https://docs.mongodb.com/manual/sharding/) allows for horizontal scaling. If an idea of operation type makeup (writes, reads, inserts, etc.) was known, it would perhaps be worth benchmarking against other database solutions such as Cassandra, or other web frameworks. [TechEmpower Web Framework Benchmarks](https://www.techempower.com/benchmarks/#section=data-r13&hw=ph&test=db) provide a good starting point for this.
 
+## Table of Contents
+- [Installation](#installation)
+  * [Quick Start](#quick-start)
+  * [Full Installation Details](#full-installation-details)
+- [Usage](#usage)
+  * [create-tip](#create-tip)
+  * [fetch-tip](#fetch-tip)
+  * [update-tip](#update-tip)
+  * [add-comment](#add-comment)
+  * [delete-tip](#delete-tip)
+  * [fetch-all-tips](#fetch-all-tips)
+  * [delete-all-tips](#delete-all-tips)
+- [Testing](#testing)
+- [Scope](#scope)
+
+
 ## Installation
 ### Quick Start
 The easiest way to get **tips-service** up and running is to run the published [Docker](https://docs.docker.com/engine/getstarted/step_one/) container, along with a container running MongoDB. To achieve this, simply execute the following:
@@ -183,7 +199,7 @@ Incoming _fetch-tip_ requests:
 
 ![Database Reads](/cd static/images/database_writes.png?raw=true)
 
-## Out of Scope
+## Scope
 The topics described below were deemed out of scope for this particular project, but would likely be of concern in a real-world application of this service.
 
 ### Authentication / Authorization
